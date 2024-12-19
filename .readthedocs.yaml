@@ -12,7 +12,6 @@ build:
       pre_install:
         - "pip install pipenv"
         - "pipenv requirements > requirements.txt"
-        - "pipenv run python docs/update.py > docs/source/fields.inc"
    tools:
       python: "3.10"
 
