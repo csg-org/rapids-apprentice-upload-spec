@@ -9,8 +9,6 @@ version: 2
 build:
    os: ubuntu-22.04
    jobs:
-      post_checkout:
-         - git fetch --unshallow
       pre_install:
         - "pip install pipenv"
         - "pipenv requirements > requirements.txt"
