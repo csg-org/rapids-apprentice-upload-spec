@@ -1,0 +1,450 @@
+{
+  "fields": [
+    {
+      "name": "Date Apprenticeship Begins",
+      "type": "string",
+      "description": "The date the apprenticeship begins. `Date Apprenticeship Begins` cannot before the program registration date. Dates starting with '0' zeros must be formatted as a text number.",
+      "example": "MM/DD/YYYY",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Apprentice First Name",
+      "type": "string",
+      "description": "The first name of the apprentice.",
+      "constraints": {
+        "required": true,
+        "maxLength": 55
+      }
+    },
+    {
+      "name": "Apprentice Last Name",
+      "type": "string",
+      "description": "The last name of the apprentice.",
+      "constraints": {
+        "required": true,
+        "maxLength": 55
+      }
+    },
+    {
+      "name": "Apprentice Middle Name",
+      "type": "string",
+      "description": "The middle name of the apprentice.",
+      "constraints": {
+        "maxLength": 55
+      }
+    },
+    {
+      "name": "Apprentice Suffix",
+      "type": "string",
+      "description": "The suffix to the apprentice name. Values include I, II, III, Jr., Sr.",
+      "categories": [
+        "I",
+        "II",
+        "III",
+        "Jr.",
+        "Sr."
+      ],
+      "categoriesOrdered": true
+    },
+    {
+      "name": "Social Security Number",
+      "type": "string",
+      "description": "The Apprentice social security number. This value will be encrypted.",
+      "constraints": {
+        "unique": true
+      }
+    },
+    {
+      "name": "Date of Birth",
+      "type": "string",
+      "description": "The apprentice's date of birth. Apprentice must be 16 years old. Dates starting with '0' zeros must be formatted as a Text Number",
+      "example": "MM/DD/YYYY",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Gender",
+      "type": "string",
+      "description": "'M' if the apprentice indicates that he is male. 'F' if the apprentice indicates that she is female. '9' if the apprentice did not self-identify.",
+      "categories": [
+        { "value": "F", "label": "Female" },
+        { "value": "M", "label": "Male" },
+        { "value": "9", "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Employment Status",
+      "type": "string",
+      "description": "Enter participant's employment status. Incumbent workers are defined as existing employees of the company.",
+      "categories": [
+        { "value": "EE", "label": "Existing employee" },
+        { "value": "NE", "label": "New Employee" }
+      ],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Apprentice Street Address",
+      "type": "string",
+      "description": "The apprentice's street address.",
+      "constraints": {
+        "required": true,
+        "maxLength": 55
+      }
+    },
+    {
+      "name": "Apprentice City",
+      "type": "string",
+      "description": "The apprentice's city.",
+      "constraints": {
+        "required": true,
+        "maxLength": 55
+      }
+    },
+    {
+      "name": "Apprentice State",
+      "type": "string",
+      "description": "The apprentice's state.",
+      "constraints": {
+        "required": true,
+        "maxLength": 2
+      }
+    },
+    {
+      "name": "Apprentice 5-Digit Zip Code",
+      "type": "string",
+      "description": "The apprentice's 5-digit zip code.",
+      "constraints": {
+        "required": true,
+        "pattern": "^[0-9]{5}",
+        "maxLength": 5
+      }
+    },
+    {
+      "name": "Telephone",
+      "type": "string",
+      "format": "uri",
+      "description": "The apprentice's telephone number."
+    },
+    {
+      "name": "Email",
+      "type": "string",
+      "format": "email",
+      "description": "The apprentice's email address."
+    },
+    {
+      "name": "Employer",
+      "type": "any",
+      "description": "The unique identifier listed in the Employer tab for the Apprentice's Occupation. These identifiers are unique for each Employer listed."
+    },
+    {
+      "name": "Ethnicity Hispanic / Latino",
+      "type": "integer",
+      "description": "If the apprentice indicates being a person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture in origin, regardless of race, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '2'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture" },
+        { "value": 2, "label": "Not Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Race-American Indian / Alaskan Native",
+      "type": "integer",
+      "description": "If the apprentice indicates origins in any of the original peoples of North America and South America (including Central America), and who maintains cultural identification through tribal affiliation or community recognition, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Original peoples of North America and South America (including Central America), and who maintains cultural identification through tribal affiliation or community recognition" },
+        { "value": 0, "label": "Not original peoples of North America and South America (including Central America), and who maintains cultural identification through tribal affiliation or community recognition" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Asian",
+      "type": "integer",
+      "description": "If the apprentice indicates having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian Subcontinent (e.g., India, Pakistan, Bangladesh, Sri Lanka, Nepal, Sikkim, and Bhutan), the value of this field is '1'. This area includes, for example, Cambodia, China, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam. If the apprentice does not meet any of these conditions, record '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Original peoples of the Far East, Southeast Asia, or the Indian Subcontinent (e.g., India, Pakistan, Bangladesh, Sri Lanka, Nepal, Sikkim, and Bhutan)" },
+        { "value": 0, "label": "Not original peoples of the Far East, Southeast Asia, or the Indian Subcontinent (e.g., India, Pakistan, Bangladesh, Sri Lanka, Nepal, Sikkim, and Bhutan)" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Black / African American",
+      "type": "integer",
+      "description": "If the apprentice indicates having origins in any of the black racial groups of Africa, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Origins in black racial groups of Africa" },
+        { "value": 0, "label": "No origins in black racial groups of Africa" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Native Hawaiian / Other Pacific Islander",
+      "type": "integer",
+      "description": "If the apprentice indicates having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands" },
+        { "value": 0, "label": "No origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "White",
+      "type": "integer",
+      "description": "If the apprentice indicates having origins in any of the original peoples of Europe, the Middle East, or North Africa, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify ethnicity, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Origins in any of the original peoples of Europe, the Middle East, or North Africa" },
+        { "value": 0, "label": "No origins in any of the original peoples of Europe, the Middle East, or North Africa" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Veteran Status",
+      "type": "integer",
+      "description": "If the apprentice indicates having served on active duty in the armed forces and who was discharged or released from such service under conditions other than dishonorable, the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify veteran status, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Veteran" },
+        { "value": 2, "label": "Non veteran" },
+        { "value": 3, "label": "Non veteran, other eligible individual" },
+        { "value": 4, "label": "Veteran, eligible" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Apprentice Disability Status",
+      "type": "integer",
+      "description": "If the apprentice indicates having any \"disability,\" as defined in Section 3(2)(a) of the Americans with Disabilities Act of 1990 (42 U.S.C. 12102). Under that definition, a \"disability\" is a physical or mental impairment that substantially limits one or more of the person's major life activities. (For definitions and examples of \"physical or mental impairment\" and \"major life activities,\" see paragraphs (1) and (2) of the definition of the term \"disability\" in 29 CFR 37.4, the definition section of the WIA non-discrimination regulations.), the value of this field is '1'. If the apprentice does not meet any of these conditions, the value of this field is '0'. If the apprentice does not self-identify disability status, the value of this field is '9'.",
+      "categories": [
+        { "value": 1, "label": "Has disability meeting definition" },
+        { "value": 2, "label": "Does not have disability meeting definition" },
+        { "value": 9, "label": "Did not self-identify" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Apprentice Education Level",
+      "type": "integer",
+      "description": "The Apprentice's education status.",
+      "categories": [
+        { "value": 1, "label": "Not High School graduate" },
+        { "value": 3, "label": "High School graduate (including equivalency)" },
+        { "value": 5, "label": "Did not self-identify" },
+        { "value": 6, "label": "Some College or Associate's degree" },
+        { "value": 7, "label": "Bachelor's degree" },
+        { "value": 8, "label": "Master's degree" },
+        { "value": 9, "label": "Doctorate or professional degree" }
+      ],
+      "categoriesOrdered": true,
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Occupation",
+      "type": "any",
+      "description": "Enter the unique identifier listed in the Occupation tab for the apprentice's occupation. These identifiers are unique for each occupation listed.",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Related Technical Instruction Provider",
+      "type": "any",
+      "description": "Enter the unique identifier listed in the RTI Providers tab for the apprentice's occupation. These identifiers are unique for each RTI Providers listed.",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Credit for previous experience",
+      "type": "string",
+      "description": "Enter if any apprentice credit for previous experience (Note: If no credit is given, enter 0).",
+      "constraints": {
+        "maxLength": 255
+      }
+    },
+    {
+      "name": "Credit for Previous Related Training In Hours",
+      "type": "integer",
+      "description": "Enter apprentice credit for previous related training in hours (Note: If no credit is given, enter 0)."
+    },
+    {
+      "name": "Prior Wages",
+      "type": "integer",
+      "description": "Enter the apprentices hourly prior wage.",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Prior Wage Units",
+      "type": "string",
+      "description": "Enter the apprentice prior wage units.",
+      "categories": [
+        { "value": "H", "label": "Hourly" },
+        { "value": "W", "label": "Weekly" },
+        { "value": "M", "label": "Monthly" },
+        { "value": "Q", "label": "Quarterly" },
+        { "value": "S", "label": "Semi-Annually" },
+        { "value": "A", "label": "Annually" }
+      ],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Entry Wages",
+      "type": "integer",
+      "description": "Enter the apprentices hourly entry wage. This wage cannot be less than the apprentice hourly entry wage for the occupation.",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Entry Wage Units",
+      "type": "string",
+      "description": "Enter the apprentice entry wage units.",
+      "categories": [
+        { "value": "H", "label": "Hourly" },
+        { "value": "W", "label": "Weekly" },
+        { "value": "M", "label": "Monthly" },
+        { "value": "Q", "label": "Quarterly" },
+        { "value": "S", "label": "Semi-Annually" },
+        { "value": "A", "label": "Annually" }
+      ],
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Wage Schedule",
+      "type": "any",
+      "description": "Enter the unique identifier listed in the Wage Schedules tab for the apprentice's occupation. These identifiers are unique for each wage schedule listed.",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "Previously Completed Career Lattice Levels",
+      "type": "any",
+      "description": "Enter the unique identifier for all previously completed Career Lattice Levels (separated by a semicolon)."
+    },
+    {
+      "name": "Career Connection",
+      "type": "string",
+      "description": "Enter the apprentice's career connection.",
+      "categories": [
+        { "value": "P", "label": "Pre-Apprenticeship" },
+        { "value": "T", "label": "Technical Training School" },
+        { "value": "M", "label": "Military Veterans" },
+        { "value": "J", "label": "Job Corps" },
+        { "value": "Y", "label": "YouthBuild" },
+        { "value": "H", "label": "HUD/STEP-UP" },
+        { "value": "C", "label": "Career Center Referral" },
+        { "value": "S", "label": "School-to-Registered Apprenticeship" },
+        { "value": "N", "label": "None" }
+      ]
+    },
+    {
+      "name": "WIOA Participant",
+      "type": "integer",
+      "description": "If WIOA Participant exists, record '1'. If no WIOA Participant exists, record '0'.",
+      "categories": [
+        { "value": 1, "label": "WIOA Participant exists" },
+        { "value": 0, "label": "WIOA Participant does not exist" }
+      ]
+    },
+    {
+      "name": "Type",
+      "type": "string",
+      "description": "Select the type.",
+      "categories": [
+        { "value": "IW", "label": "Incubent Worker" },
+        { "value": "AD", "label": "Adult" },
+        { "value": "YT", "label": "Youth" },
+        { "value": "DI", "label": "Dislocated Worker" }
+      ]
+    },
+    {
+      "name": "Career Linkage or Direct Entry",
+      "type": "string",
+      "description": "Select the Career Linkage or Direct Entry types.",
+      "categories": [
+        { "value": "N", "label": "None" },
+        { "value": "JC", "label": "JobCorps" },
+        { "value": "HD", "label": "HUD/STEP-UP" },
+        { "value": "SR", "label": "School to Registered Apprenticeship" },
+        { "value": "DE", "label": "Direct Entry" }
+      ]
+    },
+    {
+      "name": "TAA Participant",
+      "type": "integer",
+      "description": "If TAA Participant exists, record '1'. If no TAA Participant, record '0'.",
+      "categories": [
+        { "value": 1, "label": "TAA Participant exists" },
+        { "value": 0, "label": "TAA Participant does not exist" }
+      ]
+    },
+    {
+      "name": "On-the-Job Training Funding Sources",
+      "type": "string",
+      "description": "Enter if any on-the-job training funding sources.",
+      "constraints": {
+        "maxLength": 255
+      }
+    },
+    {
+      "name": "Student Status",
+      "type": "string",
+      "description": "Enter the student status for SAA VA apprentice registration.",
+      "categories": [
+        "WBLRA",
+        "YRA",
+        "NA"
+      ],
+      "constraints": {
+        "required": true
+      }
+    }
+  ],
+  "$schema": "https://datapackage.org/profiles/2.0/tableschema.json"
+}
