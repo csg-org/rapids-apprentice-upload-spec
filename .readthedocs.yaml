@@ -12,6 +12,7 @@ build:
       pre_install:
         - "pip install pipenv"
         - "pipenv requirements > requirements.txt"
+        - "mkdir -p docs/source/_static"
    tools:
       python: "3.10"
 
